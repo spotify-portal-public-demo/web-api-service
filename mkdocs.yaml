@@ -1,0 +1,8 @@
+site_name: "web-api-service"
+site_description: "REST API for public access to entities, including search"
+
+nav:
+  - Introduction: index.md
+
+plugins:
+  - techdocs-core
