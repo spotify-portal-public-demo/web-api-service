@@ -1,3 +1,16 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: web-api-service-rest
+  description: "REST API for public access to entities, including search"
+spec:
+  type: openapi
+  lifecycle: production
+  owner: "group:default/discovery"
+  definition:
+    $text: https://web-api.demo.spotifyportal.com/v3/api-docs
+---
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
@@ -19,3 +32,5 @@ spec:
   type: service
   lifecycle: production
   owner: "group:default/discovery"
+  providesApis:
+    - web-api-service-rest
