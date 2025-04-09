@@ -34,3 +34,9 @@ spec:
   owner: "group:default/discovery"
   providesApis:
     - web-api-service-rest
+  consumesApis:
+    - metadata-service-grpc
+    - search-service-grpc
+  dependsOn:
+    - component:metadata-service
+    - component:search-service
