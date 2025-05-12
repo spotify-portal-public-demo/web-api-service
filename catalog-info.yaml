@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: web-api-service
+  description: "REST API for public access to entities, including search"
+  tags:
+    - java
+    - http
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+    github.com/project-slug: spotify-portal-public-demo/web-api-service
+    sonarqube.org/project-key: spotify-portal-public-demo_web-api-service
+    grafana/dashboard-selector: web-api-service
+    backstage.io/kubernetes-id: web-api-service
+    backstage.io/kubernetes-namespace: web-api-service
+    backstage.io/kubernetes-label-selector: app=web-api-service
+spec:
+  type: service
+  lifecycle: experimental
+  owner: "group:default/discovery"
+  system: "system:default/web-api"
