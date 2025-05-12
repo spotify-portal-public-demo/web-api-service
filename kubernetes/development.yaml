@@ -46,3 +46,29 @@ spec:
   ports:
     - name: http
       port: 8080
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: web-api-service
+  namespace: web-api-service
+  annotations:
+    cert-manager.io/cluster-issuer: demo-issuer
+    traefik.ingress.kubernetes.io/router.middlewares: traefik-https-redirect@kubernetescrd
+spec:
+  ingressClassName: external
+  rules:
+    - host: web-api.demo.spotifyportal.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: web-api-service
+                port:
+                  number: 8080
+  tls:
+    - secretName: web-api-demo-cert
+      hosts:
+        - web-api.demo.spotifyportal.com
