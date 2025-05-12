@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: web-api-service
-          image: ghcr.io/spotify-portal-public-demo/web-api-service:latest # {"$imagepolicy": "flux-system:web-api-service"}
+          image: ghcr.io/spotify-portal-public-demo/web-api-service:main-efcae879-1747074938 # {"$imagepolicy": "flux-system:web-api-service"}
           imagePullPolicy: Always
           resources:
             requests:
